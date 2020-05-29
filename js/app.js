@@ -11,17 +11,30 @@ closeMenu.addEventListener('click', function(){
     menu.classList.remove("menu-slide");
 }); 
 
-
-
-// Login Menu
+// Course Slider
 $(function(){
-    $('.login-btn').click(function(){
-        $('.login-view').removeClass('slide-in');
-        $('.login-view').addClass('slide-out');
-    });
-    $('.close-login-from').click(function(event){
-        $('.login-view').addClass('slide-in');
-        $('.login-view').removeClass('slide-out');
-        event.preventDefault();
+    $('.course-slider').slick({
+        dots: false,
+        arrow: true,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+            {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+            }
+            },
+            {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+            }
+        ]
     });
 })
